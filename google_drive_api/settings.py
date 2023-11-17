@@ -126,10 +126,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-if 'DYNO' in os.environ:
-    # Принудительное использование WhiteNoise для обслуживания статических файлов
-    MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
-
-    # Статические файлы (CSS, JavaScript, картинки) сохраняются в /static/ на продакшене
-    STATIC_URL = '/static/'
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
